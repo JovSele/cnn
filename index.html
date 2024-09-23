@@ -43,17 +43,34 @@
             font-size: 1.5em;
             color: white;
         }
+         .cursor {
+            font-size: 1.2em;
+            margin-left: 5px;
+            display: inline-block;
+            width: 15px;
+            animation: flash 1s steps(1) infinite;
+        }
+
+        @keyframes flash {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
+
     <video autoplay muted loop class="video-background">
-        <source src="bg.mp4" type="video/mp4">
+        <source src="your-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
 
-    <div class="content">
-        <h1>Welcome to My Website</h1>
-        <p>This is a simple web page with a video background.</p>
+    <div class="black-box">
+        <div class="content">
+            Welcome...
+            <span class="cursor">_</span>
+        </div>
     </div>
+
 </body>
 </html>
