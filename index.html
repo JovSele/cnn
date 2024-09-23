@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Background with Flashing Cursor</title>
     <style>
-       body, html {
+        body, html {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -13,27 +13,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: transparent;
+            background: black; /* Change to match your video background */
             font-family: 'Courier New', Courier, monospace;
             color: white;
-        }
-
-        .content {
-            display: flex;
-            align-items: center;
-            font-size: 4em;
-        }
-
-        .video-background {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
         }
 
         .content {
@@ -51,25 +33,40 @@
         }
 
         @keyframes flash {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Video background */
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
 <body>
-
     <video autoplay muted loop class="video-background">
         <source src="bg.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
 
     <div class="content">
-        <div class="content">
-            Welcome...
-            <span class="cursor"> > </span>
-        </div>
+        Welcome...
+        <span class="cursor">_</span>
     </div>
-
 </body>
 </html>
