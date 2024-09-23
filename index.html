@@ -10,6 +10,10 @@
             padding: 0;
             height: 100%;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
         }
         .video-background {
             position: absolute;
@@ -27,14 +31,18 @@
             z-index: 1;
             color: white;
             text-align: center;
-            font-size: 2em;
-            padding: 20px;
+        }
+        h1 {
+            font-size: 4em;
+        }
+        p {
+            font-size: 1.5em;
         }
     </style>
 </head>
 <body>
     <video autoplay muted loop class="video-background">
-        <source src="bg.mp4" type="video/mp4">
+        <source src="your-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
     <div class="content">
