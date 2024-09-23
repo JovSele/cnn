@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background with Flashing Cursor</title>
+    <title>Video Background</title>
     <style>
         body, html {
             margin: 0;
@@ -13,38 +13,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: black; /* Change to match your video background */
-            font-family: 'Courier New', Courier, monospace;
-            color: white;
+            font-family: Arial, sans-serif;
         }
-
-        .content {
-            display: flex;
-            align-items: center;
-            font-size: 4em;
-        }
-
-        .cursor {
-            font-size: 1.2em;
-            margin-left: 5px;
-            display: inline-block;
-            width: 15px;
-            animation: flash 1s steps(1) infinite;
-        }
-
-        @keyframes flash {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        /* Video background */
         .video-background {
             position: absolute;
             top: 50%;
@@ -56,6 +26,18 @@
             z-index: -1;
             transform: translate(-50%, -50%);
         }
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            font-size: 4em;
+        }
+        p {
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
@@ -63,10 +45,9 @@
         <source src="bg.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-
     <div class="content">
-        Welcome...
-        <span class="cursor">_</span>
+        <h1>Welcome to My Website</h1>
+        <p>This is a simple web page with a video background.</p>
     </div>
 </body>
 </html>
