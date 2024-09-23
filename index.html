@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background</title>
+    <title>Video Background with Typing Effect</title>
     <style>
         body, html {
             margin: 0;
@@ -32,16 +32,11 @@
             position: relative;
             z-index: 1;
             text-align: center;
-        }
-        h1 {
-            font-size: 4em;
             color: white;
+            font-size: 4em; /* Adjust size as needed */
         }
 
-        
         .cursor {
-            font-size: 1.2em;
-            margin-left: 5px;
             display: inline-block;
             width: 15px;
             animation: flash 1s steps(1) infinite;
@@ -52,7 +47,6 @@
             50% { opacity: 0; }
             100% { opacity: 1; }
         }
-
     </style>
 </head>
 <body>
@@ -60,9 +54,26 @@
         <source src="bg.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-        <div class="content">
-            <h1>Welcome </h1>
-            <span class="cursor">_</span>
-        </div>
+
+    <div class="content">
+        <span id="typing-text"></span>
+        <span class="cursor">_</span>
+    </div>
+
+    <script>
+        const text = "Welcome...";
+        const typingTextElement = document.getElementById("typing-text");
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingTextElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 200); // Adjust speed here (200ms)
+            }
+        }
+
+        type(); // Start typing effect
+    </script>
 </body>
 </html>
