@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background with Blinking Cursor</title>
+    <title>Video Background with Flashing Cursor</title>
     <style>
         body, html {
             margin: 0;
@@ -13,7 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: black; /* Change to match the video background */
+            background: black; /* Change to match your video background */
             font-family: 'Courier New', Courier, monospace;
             color: white;
         }
@@ -29,13 +29,18 @@
             margin-left: 5px;
             display: inline-block;
             width: 15px;
-            background-color: transparent;
-            animation: blink 1s step-start infinite;
+            animation: flash 1s steps(1) infinite;
         }
 
-        @keyframes blink {
+        @keyframes flash {
+            0% {
+                opacity: 1;
+            }
             50% {
-                background-color: white;
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
             }
         }
 
