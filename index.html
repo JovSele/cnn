@@ -64,25 +64,11 @@
     </video>
 
     <div class="content">
-        <a href="https://uwt101.com" target="_blank" id="typing-text"></a>
-        <a href="https://uwt101.com" target="_blank" ><span class="cursor">_</span></a>
+        <a href="https://uwt101.com" target="_blank" id="typing-text">Welcome</a>
+        <a href="https://uwt101.com" target="_blank" ><span class="cursor">|</span></a>
         
     </div>
 
-    <script>
-        const text = "Welcome";
-        const typingTextElement = document.getElementById("typing-text");
-        let index = 0;
-
-        function type() {
-            if (index < text.length) {
-                typingTextElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(type, 200); // Adjust speed here (200ms)
-            }
-        }
-
-        type(); // Start typing effect
-    </script>
+    
 </body>
 </html>
