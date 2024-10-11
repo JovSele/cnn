@@ -25,108 +25,91 @@
     }
 
     body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #000;
-  text-align: center;
-  padding: 0 15px; /* Adding padding for smaller screens */
-}
-
-
+      height: 100vh;
+      display: flex;
+      align-items: flex-start; /* Prvky začnú od vrchu */
+      justify-content: center; /* Zarovná horizontálne do stredu */
+      background: #000;
+      text-align: center;
+      padding: 0 15px;
+      position: relative;
+    }
 
     .video-background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-}
-
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+    }
 
     .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 10%; /* Umiestni prvky 10 % od vrchu */
+      z-index: 1;
+    }
 
-.text-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: -350px;
-  z-index: 1;
-  flex-wrap: wrap; /* Wraps text elements for small screens */
-}
+    .text-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-   .static-txt, .dynamic-txts li {
-  font-size: 60px;
- color: #fff;
-white-space: nowrap;
-}
+    .static-txt, .dynamic-txts li {
+      font-size: 60px;
+      color: #fff;
+      white-space: nowrap;
+    }
 
+    button {
+      margin-top: 20px; /* Priestor medzi textom a tlačidlom */
+      height: 65px;
+      width: 210px;
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      outline: none;
+      cursor: pointer;
+      background: #0d0d0d;
+      transition: 0.6s;
+    }
 
+    /* Pre tablety */
+    @media (max-width: 768px) {
+      .static-txt, .dynamic-txts li {
+        font-size: 50px;
+      }
 
-button {
-    position: relative;
-  height: 65px;
-  width: 210px;
-  z-index: 1;
-  top: -300px; /* Moved down by reducing the negative value */
-  margin: 0 40px;
-  font-size: 23px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  border: 1px solid transparent;
-  outline: none;
-  cursor: pointer;
-  background: #0d0d0d;
-  overflow: hidden;
-  transition: 0.6s;
-}
+      button {
+        width: 180px;
+        font-size: 20px;
+      }
+    }
 
-/* For tablets */
-@media (max-width: 768px) {
-  .static-txt, .dynamic-txts li {
-    font-size: 60px; /* Reducing font size */
-  }
+    /* Pre mobily */
+    @media (max-width: 480px) {
+      .static-txt, .dynamic-txts li {
+        font-size: 40px;
+      }
 
-  .text-container {
-    top: -300px; /* Adjust text positioning */
-  }
-
-  button {
-    width: 180px; /* Reducing button width */
-    font-size: 20px; /* Slightly smaller font for buttons */
-    top: -150px; /* Adjusting button positioning */
-  }
-}
-
-/* For mobile phones */
-@media (max-width: 480px) {
-  .static-txt, .dynamic-txts li {
-    font-size: 60px; /* Further reducing font size */
-  }
-
-  .text-container {
-    top: -280px; /* Adjust positioning for smaller screens */
-  }
-
-  button {
-    width: 160px; /* Reducing button width */
-    height: 50px; /* Reducing button height */
-    font-size: 18px; /* Smaller font for buttons */
-    top: -150px; /* Adjusting button positioning */
-  }
-}
+      button {
+        width: 160px;
+        height: 50px;
+        font-size: 18px;
+      }
+    }
 
     .dynamic-txts {
       margin-left: 15px;
@@ -177,57 +160,63 @@ button {
       }
     }
 
-    
-button:first-child{
-  color: #206592;
-  border-color: #206592;
-}
-button:last-child{
-  color: #ce5c0c;
-  border-color: #ce5c0c;
-}
-button:before, button:after{
-  position: absolute;
-  content: '';
-  left: 0;
-  top: 0;
-  height: 100%;
-  filter: blur(30px);
-  opacity: 0.4;
-  transition: 0.6s;
-}
-button:before{
-  width: 60px;
-  background: rgba(255,255,255,0.6);
-  transform: translateX(-130px) skewX(-45deg);
-}
-button:after{
-  width: 30px;
-  background: rgba(255,255,255,0.6);
-  transform: translateX(-130px) skewX(-45deg);
-}
-button:hover:before,
-button:hover:after{
-  opacity: 0.6;
-  transform: translateX(320px) skewX(-45deg);
-}
-button:hover{
-  color: #f2f2f2;
-}
-button:hover:first-child{
-  background: #206592;
-}
-button:hover:last-child{
-  background: #ce5c0c;
+    button:first-child {
+      color: #206592;
+      border-color: #206592;
+    }
+
+    button:last-child {
+      color: #ce5c0c;
+      border-color: #ce5c0c;
+    }
+
+    button:before, button:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      height: 100%;
+      filter: blur(30px);
+      opacity: 0.4;
+      transition: 0.6s;
+    }
+
+    button:before {
+      width: 60px;
+      background: rgba(255,255,255,0.6);
+      transform: translateX(-130px) skewX(-45deg);
+    }
+
+    button:after {
+      width: 30px;
+      background: rgba(255,255,255,0.6);
+      transform: translateX(-130px) skewX(-45deg);
+    }
+
+    button:hover:before, button:hover:after {
+      opacity: 0.6;
+      transform: translateX(320px) skewX(-45deg);
+    }
+
+    button:hover {
+      color: #f2f2f2;
+    }
+
+    button:hover:first-child {
+      background: #206592;
+    }
+
+    button:hover:last-child {
+      background: #ce5c0c;
     }
 
   </style>
 </head>
 <body>
- <video autoplay muted loop class="video-background">
-        <source src="bg7.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
+  <video autoplay muted loop class="video-background">
+    <source src="bg7.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 
   <div class="wrapper">
     <div class="text-container">
@@ -241,8 +230,8 @@ button:hover:last-child{
     </div>
 
     <!-- Button below the text -->
-    <a href="https://uwt101.com" target="_blank" >
-    <button>Enter now ...</button>
+    <a href="https://uwt101.com" target="_blank">
+      <button>Enter now ...</button>
     </a>
   </div>
 </body>
