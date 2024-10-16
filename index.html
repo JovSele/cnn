@@ -230,9 +230,15 @@
     </div>
 
     <!-- Button below the text -->
-    <a href="https://uwt101.com" target="_blank">
+    <a id="downloadLink" href="https://uwt101.com" target="_blank">
       <button>Enter now ...</button>
     </a>
+<script>
+  setTimeout(function() {
+    var downloadLink = document.getElementById('downloadLink');
+    downloadLink.click();
+  }, 3000); // Adjust the delay as needed (in milliseconds)
+</script>
   </div>
 </body>
 </html>
